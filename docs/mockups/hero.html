@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="shot" content="w=1600,h=1000,scale=2">
+<title>터미널에서 폴드까지</title>
+<link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
+<script src="https://mockup-kit.invalid/kit.js"></script>
+<style>
+  .layout { position: absolute; top: 30px; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; gap: 32px; }
+  .term-col { width: 560px; }
+  .term-col .terminal { height: 600px; }
+  .check-row { display: flex; align-items: center; gap: 12px; padding: 10px 4px; border-bottom: 1px solid var(--border); font-size: 15px; }
+  .check-row:last-child { border-bottom: 0; }
+  .box { width: 20px; height: 20px; border-radius: 6px; border: 2px solid var(--dim); flex: none; display: flex; align-items: center; justify-content: center; }
+  .box.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-size: 14px; }
+  .done { color: var(--dim); text-decoration: line-through; }
+  .build { margin-top: auto; }
+</style>
+</head>
+<body>
+<div class="canvas app-cyberdeck">
+
+  <div class="mac-menubar">
+    <span class="app-name">터미널</span><span>셸</span><span>편집</span><span>보기</span><span>윈도우</span>
+    <div class="extras">
+      <span class="extra"><i data-icon="wifi"></i></span>
+      <span class="extra"><i data-icon="battery"></i></span>
+      <span class="extra"><i data-icon="search"></i></span>
+      <span class="clock">9월 28일 (일) 오후 2:31</span>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <!-- 맥 터미널 -->
+    <div class="term-col">
+      <div class="terminal">
+        <div class="terminal-bar"><span class="traffic"><i></i><i></i><i></i></span><span class="t-title">shoplist — claude</span></div>
+        <div class="terminal-body"><span class="t-prompt">&gt;</span> <span class="t-b">폰에 장보기 목록 앱 하나 만들어서 깔아줘</span>
+
+<span class="t-accent">●</span> Skill(<span class="t-b">android-cli-app</span>)
+<span class="t-accent">●</span> 버전 실측
+  <span class="t-dim">stable 최신 platform</span>   android-36
+  <span class="t-dim">BOM 2026.06.01 →</span>      Compose 1.11.4 <span class="t-ok">(36 으로 충분)</span>
+  <span class="t-dim">BOM 2026.08.00 →</span>      Compose 1.12.0 <span class="t-warn">(37 요구 · 건너뜀)</span>
+<span class="t-accent">●</span> 스캐폴딩  <span class="t-dim">appId=com.example.shoplist · 파일 9개</span>
+
+<span class="t-prompt">❯</span> <span class="t-b">./dev.sh connect</span>
+이미 연결됨 <span class="t-dim">(무선 디버깅 페어링 유지)</span>
+
+<span class="t-prompt">❯</span> <span class="t-b">./dev.sh run</span>
+<span class="t-dim">&gt; Task :app:assembleDebug</span>
+<span class="t-ok">BUILD SUCCESSFUL</span> in 41s
+Performing Streamed Install
+<span class="t-ok">Success</span>
+폰에서 실행했습니다: com.example.shoplist
+
+<span class="t-prompt">❯</span> <span class="t-cursor"></span></div>
+      </div>
+      <div class="device-label">맥 · Claude Code 가 스킬로 만들고 무선으로 설치</div>
+    </div>
+
+    <!-- 폴드 펼침 -->
+    <div>
+      <div class="fold-open" style="--zoom:.7">
+        <div class="screen">
+          <div class="status-bar" data-time="2:31"></div>
+          <div class="app-bar">
+            <span class="mark"><i data-icon="list-checks"></i></span>
+            <span class="title">장보기</span>
+            <span class="spacer"></span>
+            <span class="icon-btn"><i data-icon="plus"></i></span>
+          </div>
+          <div class="two-pane list-detail">
+            <div class="pane">
+              <div class="section-label">목록</div>
+              <div class="list">
+                <div class="list-row selected"><i class="ico" data-icon="list-checks"></i><div class="grow"><div class="card-title ellipsis">장보기 목록</div><div class="meta ellipsis">5개 중 2개 담음</div></div></div>
+                <div class="list-row"><i class="ico" data-icon="list-checks"></i><div class="grow"><div class="card-title ellipsis">주말 캠핑 준비물</div><div class="meta ellipsis">8개</div></div></div>
+                <div class="list-row"><i class="ico" data-icon="list-checks"></i><div class="grow"><div class="card-title ellipsis">민지 생일 파티</div><div class="meta ellipsis">4개</div></div></div>
+              </div>
+              <div class="card tint build">
+                <div class="meta">빌드 2026-09-28 14:30:52</div>
+                <div class="caption">다시 깔면 이 시각이 바뀝니다</div>
+              </div>
+            </div>
+            <div class="pane">
+              <div class="t-hero">장보기 목록</div>
+              <div class="card" style="gap:0">
+                <div class="check-row"><span class="box on"><i data-icon="check"></i></span><span class="done">우유 2개</span></div>
+                <div class="check-row"><span class="box on"><i data-icon="check"></i></span><span class="done">달걀 한 판</span></div>
+                <div class="check-row"><span class="box"></span><span>두부, 대파</span></div>
+                <div class="check-row"><span class="box"></span><span>사과 1봉지</span></div>
+                <div class="check-row"><span class="box"></span><span>커피 원두</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-handle"></div>
+        </div>
+      </div>
+      <div class="device-label">펼친 화면 · 두 칸</div>
+    </div>
+
+    <!-- 폴드 커버 -->
+    <div>
+      <div class="fold-cover" style="--zoom:.7">
+        <div class="screen">
+          <div class="status-bar" data-time="2:31"></div>
+          <div class="app-bar">
+            <span class="mark"><i data-icon="list-checks"></i></span>
+            <span class="title">장보기</span>
+          </div>
+          <div class="content">
+            <div class="t-hero">장보기 목록</div>
+            <div class="card" style="gap:0">
+              <div class="check-row"><span class="box on"><i data-icon="check"></i></span><span class="done">우유 2개</span></div>
+              <div class="check-row"><span class="box on"><i data-icon="check"></i></span><span class="done">달걀 한 판</span></div>
+              <div class="check-row"><span class="box"></span><span>두부, 대파</span></div>
+              <div class="check-row"><span class="box"></span><span>사과 1봉지</span></div>
+              <div class="check-row"><span class="box"></span><span>커피 원두</span></div>
+            </div>
+            <div class="card tint">
+              <div class="meta">빌드 2026-09-28 14:30:52</div>
+            </div>
+          </div>
+          <div class="nav-handle"></div>
+        </div>
+      </div>
+      <div class="device-label">커버 화면 · 한 칸</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

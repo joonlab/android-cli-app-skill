@@ -1,0 +1,11 @@
+# 새 앱 프로젝트 루트에 .gitignore 로 복사
+.gradle/
+build/
+app/build/
+local.properties
+dev.env
+*.apk
+*.log
+.idea/
+*.iml
+.DS_Store

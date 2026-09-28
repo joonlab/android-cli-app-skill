@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="shot" content="w=1600,h=900,scale=2">
+<title>썸네일</title>
+<link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
+<script src="https://mockup-kit.invalid/kit.js"></script>
+<style>
+  .layout { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 64px; }
+  .copy { width: 620px; display: flex; flex-direction: column; gap: 18px; }
+  .big { font-size: 56px; line-height: 66px; font-weight: 800; letter-spacing: -1.2px; color: var(--mac-text); }
+  .big em { font-style: normal; color: var(--accent); }
+  .sub { font-size: 22px; line-height: 32px; color: var(--mac-dim); }
+  .copy .terminal { height: 150px; margin-top: 10px; }
+  .copy .terminal-body { font-size: 15px; line-height: 23px; }
+  .hello { display: flex; flex-direction: column; gap: 12px; }
+  .hello .t-hero { font-size: 26px; line-height: 32px; }
+</style>
+</head>
+<body>
+<div class="canvas thumb desk-accent app-cyberdeck">
+  <div class="layout">
+    <div class="copy">
+      <div class="big">Android Studio 없이<br><em>터미널에서 폴드까지</em></div>
+      <div class="sub">Kotlin/Compose 앱을 CLI 로 만들고 무선 adb 로 폰에 까는 Claude Code 스킬</div>
+      <div class="terminal">
+        <div class="terminal-bar"><span class="traffic"><i></i><i></i><i></i></span><span class="t-title">zsh</span></div>
+        <div class="terminal-body"><span class="t-prompt">❯</span> <span class="t-b">./dev.sh run</span>
+<span class="t-ok">BUILD SUCCESSFUL</span> · <span class="t-ok">Success</span>
+폰에서 실행했습니다: com.example.hello</div>
+      </div>
+    </div>
+    <div class="fold-cover" style="--zoom:.8">
+      <div class="screen">
+        <div class="status-bar" data-time="2:31"></div>
+        <div class="app-bar">
+          <span class="mark"><i data-icon="smartphone"></i></span>
+          <span class="title">Hello, Fold</span>
+        </div>
+        <div class="content">
+          <div class="card raised hello">
+            <div class="t-hero">Hello, Fold</div>
+            <div class="body">케이블 없이 설치됐습니다</div>
+            <div class="meta">빌드 2026-09-28 14:30:52</div>
+          </div>
+          <div class="card tint">
+            <div class="card-row"><span class="ico"><i data-icon="wifi"></i></span><div class="grow"><div class="card-title">무선 adb</div><div class="meta">다시 빌드하면 그대로 갱신</div></div></div>
+          </div>
+        </div>
+        <div class="nav-handle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

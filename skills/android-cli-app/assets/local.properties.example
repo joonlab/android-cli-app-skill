@@ -1,0 +1,4 @@
+# local.properties 로 복사하고 경로를 본인 것으로 바꾼다. git 에 올리지 않는다.
+# sdk.dir 은 절대경로여야 한다($HOME 같은 변수는 안 풀린다).
+#   echo "sdk.dir=$HOME/Library/Android/sdk" > local.properties
+sdk.dir=/path/to/Android/sdk

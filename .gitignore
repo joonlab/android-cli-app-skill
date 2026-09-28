@@ -1,0 +1,23 @@
+# 로컬 설정 — .example 만 커밋
+local.properties
+dev.env
+*.env
+!*.env.example
+
+# 빌드 산출물·로그
+.gradle/
+build/
+*.apk
+*.log
+runs/
+_data/
+
+# 편집기·OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+node_modules/
+
+# 잘못 만든 파일 보관소
+_trash/

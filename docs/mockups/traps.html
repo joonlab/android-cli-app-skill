@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="shot" content="w=1600,h=1000,scale=2">
+<title>버전 실측과 함정</title>
+<link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
+<script src="https://mockup-kit.invalid/kit.js"></script>
+<style>
+  .wrap { position: absolute; inset: 56px 64px 56px 64px; display: flex; flex-direction: column; justify-content: center; gap: 32px; }
+  .terms { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .terms .terminal { height: 330px; }
+  .traps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .trap { padding: 18px; gap: 10px; }
+  .trap .num { font-size: 13px; font-weight: 700; color: var(--accent); }
+  .trap .err { font-family: var(--mono); font-size: 12px; line-height: 18px; color: var(--danger); background: var(--panel2); border-radius: 8px; padding: 8px 10px; }
+  .trap .fix { font-size: 15px; line-height: 23px; }
+  .trap { min-height: 200px; }
+</style>
+</head>
+<body>
+<div class="canvas app-cyberdeck">
+  <div class="wrap">
+    <div>
+      <div class="canvas-title">버전을 베끼지 않고 실측한다</div>
+      <div class="canvas-sub">스킬은 먼저 stable 채널과 BOM 을 확인하고, 의존성이 요구하는 compileSdk 가 더 높으면 의존성을 내립니다.</div>
+    </div>
+
+    <div class="terms">
+      <div class="terminal">
+        <div class="terminal-bar"><span class="traffic"><i></i><i></i><i></i></span><span class="t-title">① stable 채널 확인</span></div>
+        <div class="terminal-body"><span class="t-prompt">❯</span> <span class="t-b">sdkmanager --list | sed -n '/Available/,$p' \
+    | grep "platforms;android-3"</span>
+  platforms;android-34   | 3 | Android SDK Platform 34
+  platforms;android-35   | 2 | Android SDK Platform 35
+  <span class="t-ok">platforms;android-36   | 2 | Android SDK Platform 36</span>
+
+<span class="t-dim"># android-37 은 목록 위쪽 preview 섹션에만 있다</span>
+<span class="t-prompt">❯</span> <span class="t-b">sdkmanager "platforms;android-37"</span>
+<span class="t-err">Warning: Failed to find package 'platforms;android-37'</span>
+
+<span class="t-accent">→ compileSdk = 36</span></div>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar"><span class="traffic"><i></i><i></i><i></i></span><span class="t-title">② BOM 이 끌어오는 Compose</span></div>
+        <div class="terminal-body"><span class="t-prompt">❯</span> <span class="t-b">for b in 2026.06.01 2026.08.00; do
+    curl -s ".../compose-bom-$b.pom" \
+      | grep -A2 "&lt;artifactId&gt;ui&lt;"; done</span>
+  2026.06.01  ui <span class="t-ok">1.11.4</span>   <span class="t-dim">compileSdk 36</span>
+  2026.08.00  ui <span class="t-warn">1.12.0</span>   <span class="t-dim">compileSdk 37 요구</span>
+
+<span class="t-dim"># 규칙: 의존성이 요구하는 compileSdk &gt; stable 최신</span>
+<span class="t-dim">#       → 프리뷰 SDK 를 받지 말고 의존성을 내린다</span>
+
+<span class="t-accent">→ compose-bom:2026.06.01</span>
+<span class="t-accent">→ activity-compose:1.12.4</span></div>
+      </div>
+    </div>
+
+    <div class="traps">
+      <div class="card trap">
+        <div class="num">함정 1 · JDK</div>
+        <div class="err">brew install --cask temurin@21
+(출력 없이 멈춤)</div>
+        <div class="fix">cask 는 보이지 않는 sudo 창을 기다린다. <b>formula</b> 로 설치한다.</div>
+      </div>
+      <div class="card trap">
+        <div class="num">함정 2 · AGP 9</div>
+        <div class="err">'org.jetbrains.kotlin.android' plugin is no longer required</div>
+        <div class="fix">Kotlin 이 AGP 에 내장됐다. 그 플러그인만 지우고 Compose 플러그인은 둔다.</div>
+      </div>
+      <div class="card trap">
+        <div class="num">함정 3 · compileSdk</div>
+        <div class="err">requires … version 37 or later of the Android APIs</div>
+        <div class="fix">android-37 은 preview 다. <b>BOM 을 내린다.</b></div>
+      </div>
+      <div class="card trap">
+        <div class="num">함정 4 · gradlew</div>
+        <div class="err">Unable to locate a Java Runtime.</div>
+        <div class="fix">gradlew 는 org.gradle.java.home 보다 먼저 java 를 찾는다. <span class="mono">dev.sh</span> 가 JAVA_HOME 을 잡는다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

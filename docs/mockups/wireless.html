@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="shot" content="w=1600,h=1000,scale=2">
+<title>무선 연결 복구</title>
+<link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
+<script src="https://mockup-kit.invalid/kit.js"></script>
+<style>
+  .layout { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 56px; }
+  .right { width: 780px; display: flex; flex-direction: column; gap: 22px; }
+  .right .terminal { height: 270px; }
+  .dialog { position: absolute; left: 20px; right: 20px; bottom: 90px; z-index: 50; background: var(--raised); border-radius: 24px; padding: 22px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+  .dialog .d-title { font-size: 18px; line-height: 24px; font-weight: 700; }
+  .dialog .d-body { font-size: 14px; line-height: 21px; color: var(--dim); }
+  .cb { display: flex; align-items: center; gap: 10px; font-size: 14.5px; }
+  .cb .box { width: 20px; height: 20px; border-radius: 6px; background: var(--accent); color: var(--on-accent); display: flex; align-items: center; justify-content: center; font-size: 14px; flex: none; }
+  .d-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+  table.routes { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  table.routes th, table.routes td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); }
+  table.routes th { font-size: 13px; color: var(--dim); font-weight: 600; }
+  table.routes tr:last-child td { border-bottom: 0; }
+  .y { color: var(--ok); font-weight: 700; }
+  .n { color: var(--danger); font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="canvas app-cyberdeck">
+  <div class="layout">
+
+    <div>
+      <div class="fold-cover" style="--zoom:.8">
+        <div class="screen">
+          <div class="status-bar" data-time="2:12"></div>
+          <div class="app-bar">
+            <span class="icon-btn"><i data-icon="arrow-left"></i></span>
+            <span class="title">무선 디버깅</span>
+          </div>
+          <div class="content">
+            <div class="card dense" style="gap:0">
+              <div class="toggle-row"><div class="grow"><div class="label-main">사용 중</div></div><span class="switch on"></span></div>
+            </div>
+            <div class="card dense">
+              <div class="label-main">IP 주소 및 포트</div>
+              <div class="caption">사용할 수 없음</div>
+            </div>
+            <div class="card dense">
+              <div class="label-main">페어링 코드로 기기 페어링</div>
+              <div class="caption">6자리 코드로 새 기기 연결</div>
+            </div>
+          </div>
+          <div class="scrim"></div>
+          <div class="dialog">
+            <div class="d-title">이 네트워크에서 무선 디버깅을 허용할까요?</div>
+            <div class="d-body">네트워크 이름: 집 Wi-Fi</div>
+            <div class="cb"><span class="box"><i data-icon="check"></i></span>이 네트워크에서 항상 허용</div>
+            <div class="d-actions"><span class="btn btn-ghost">취소</span><span class="btn btn-primary">허용</span></div>
+          </div>
+          <div class="nav-handle"></div>
+        </div>
+      </div>
+      <div class="device-label">체크만 하면 안 닫힌다 · 「허용」까지 눌러야 한다<small>네트워크마다 한 번</small></div>
+    </div>
+
+    <div class="right">
+      <div>
+        <div class="canvas-title">어느 망에서든 다시 붙는다</div>
+        <div class="canvas-sub">포트는 재부팅마다 바뀌므로 <span class="mono">dev.sh connect</span> 가 세 경로를 차례로 시도합니다.</div>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar"><span class="traffic"><i></i><i></i><i></i></span><span class="t-title">shoplist — zsh</span></div>
+        <div class="terminal-body"><span class="t-prompt">❯</span> <span class="t-b">./dev.sh connect</span>
+<span class="t-dim">1) mDNS _adb-tls-connect._tcp … 찾지 못함</span>
+<span class="t-dim">2) 기본 게이트웨이:5555 … 응답 없음</span>
+<span class="t-ok">3) PHONE_HOST my-phone:5555 … 연결됨</span>
+
+<span class="t-prompt">❯</span> <span class="t-b">./dev.sh run</span>
+<span class="t-ok">BUILD SUCCESSFUL</span> · <span class="t-ok">Success</span>
+폰에서 실행했습니다: com.example.shoplist
+<span class="t-prompt">❯</span> <span class="t-cursor"></span></div>
+      </div>
+      <div class="card">
+        <table class="routes">
+          <tr><th>폰이 놓인 망</th><th>무선 디버깅</th><th>tcpip 5555</th><th>VPN 주소</th></tr>
+          <tr><td>Wi-Fi 클라이언트</td><td class="y">됨</td><td class="y">됨</td><td class="y">됨</td></tr>
+          <tr><td>순수 핫스팟 (LTE 공유)</td><td class="n">안 됨</td><td class="y">됨 · 케이블 1회</td><td class="y">됨</td></tr>
+          <tr><td>서로 다른 망</td><td class="n">안 됨</td><td class="n">안 됨</td><td class="y">됨</td></tr>
+          <tr><td>폰 재부팅 후</td><td class="y">페어링 유지</td><td class="n">리셋</td><td class="y">됨</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
