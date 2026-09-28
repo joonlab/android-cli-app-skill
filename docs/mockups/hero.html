@@ -7,10 +7,11 @@
 <link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
 <script src="https://mockup-kit.invalid/kit.js"></script>
 <style>
-  .layout { position: absolute; top: 30px; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; gap: 32px; }
-  .term-col { width: 560px; }
-  .term-col .terminal { height: 600px; }
-  .check-row { display: flex; align-items: center; gap: 12px; padding: 10px 4px; border-bottom: 1px solid var(--border); font-size: 15px; }
+  .layout { position: absolute; top: 30px; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; gap: 28px; }
+  .term-col { width: 500px; }
+  .term-col .terminal { height: 500px; }
+  .term-col .terminal-body { font-size: 13px; line-height: 20px; }
+  .check-row { display: flex; align-items: center; gap: 12px; padding: 14px 4px; border-bottom: 1px solid var(--border); font-size: 15px; }
   .check-row:last-child { border-bottom: 0; }
   .box { width: 20px; height: 20px; border-radius: 6px; border: 2px solid var(--dim); flex: none; display: flex; align-items: center; justify-content: center; }
   .box.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-size: 14px; }
@@ -63,7 +64,7 @@ Performing Streamed Install
 
     <!-- 폴드 펼침 -->
     <div>
-      <div class="fold-open" style="--zoom:.7">
+      <div class="fold-open" style="--zoom:.64">
         <div class="screen">
           <div class="status-bar" data-time="2:31"></div>
           <div class="app-bar">
@@ -104,7 +105,7 @@ Performing Streamed Install
 
     <!-- 폴드 커버 -->
     <div>
-      <div class="fold-cover" style="--zoom:.7">
+      <div class="fold-cover" style="--zoom:.64">
         <div class="screen">
           <div class="status-bar" data-time="2:31"></div>
           <div class="app-bar">
@@ -120,8 +121,9 @@ Performing Streamed Install
               <div class="check-row"><span class="box"></span><span>사과 1봉지</span></div>
               <div class="check-row"><span class="box"></span><span>커피 원두</span></div>
             </div>
-            <div class="card tint">
+            <div class="card tint build">
               <div class="meta">빌드 2026-09-28 14:30:52</div>
+              <div class="caption">다시 깔면 이 시각이 바뀝니다</div>
             </div>
           </div>
           <div class="nav-handle"></div>

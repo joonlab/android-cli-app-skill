@@ -7,15 +7,19 @@
 <link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
 <script src="https://mockup-kit.invalid/kit.js"></script>
 <style>
-  .layout { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 64px; }
+  .layout { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 72px; }
   .copy { width: 620px; display: flex; flex-direction: column; gap: 18px; }
   .big { font-size: 56px; line-height: 66px; font-weight: 800; letter-spacing: -1.2px; color: var(--mac-text); }
   .big em { font-style: normal; color: var(--accent); }
   .sub { font-size: 22px; line-height: 32px; color: var(--mac-dim); }
   .copy .terminal { height: 150px; margin-top: 10px; }
   .copy .terminal-body { font-size: 15px; line-height: 23px; }
-  .hello { display: flex; flex-direction: column; gap: 12px; }
-  .hello .t-hero { font-size: 26px; line-height: 32px; }
+  .fold-cover .content { justify-content: center; gap: 14px; padding: 16px 20px 28px; }
+  .hello { display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; }
+  .hello .t-hero { font-size: 44px; line-height: 52px; }
+  .hello .body { font-size: 19px; line-height: 28px; }
+  .hello .meta { font-size: 15px; }
+  .adb .card-title { font-size: 17px; } .adb .meta { font-size: 14px; }
 </style>
 </head>
 <body>
@@ -31,7 +35,7 @@
 폰에서 실행했습니다: com.example.hello</div>
       </div>
     </div>
-    <div class="fold-cover" style="--zoom:.8">
+    <div class="fold-cover" style="--zoom:.86">
       <div class="screen">
         <div class="status-bar" data-time="2:31"></div>
         <div class="app-bar">
@@ -44,7 +48,7 @@
             <div class="body">케이블 없이 설치됐습니다</div>
             <div class="meta">빌드 2026-09-28 14:30:52</div>
           </div>
-          <div class="card tint">
+          <div class="card tint adb">
             <div class="card-row"><span class="ico"><i data-icon="wifi"></i></span><div class="grow"><div class="card-title">무선 adb</div><div class="meta">다시 빌드하면 그대로 갱신</div></div></div>
           </div>
         </div>
