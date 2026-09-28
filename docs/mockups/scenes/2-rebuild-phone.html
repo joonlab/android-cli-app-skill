@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="shot" content="w=1296,h=1800,scale=1">
+<title>장면 2 · 폰 커버 화면 — 바뀐 빌드 시각</title>
+<link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
+<script src="https://mockup-kit.invalid/kit.js"></script>
+<style>
+  /* 폴드8 커버 화면 0.72:1 — 360 x 500dp 를 3.6배 */
+  .screen { zoom: 3.6; width: 360px; height: 500px; border-radius: 0; }
+  .status-bar { height: 26px; font-size: 13px; padding: 0 18px; }
+  .app-bar { height: 50px; gap: 10px; }
+  .app-bar .title { font-size: 22px; }
+  .screen > .content { padding: 10px 16px 10px; gap: 12px; }
+  .t-hero { font-size: 24px; line-height: 30px; }
+  .card.list { padding: 4px 14px; gap: 0; }
+  .check-row { display: flex; align-items: center; gap: 12px; padding: 10px 2px; border-bottom: 1px solid var(--border); font-size: 21px; line-height: 27px; }
+  .check-row:last-child { border-bottom: 0; }
+  .box { width: 24px; height: 24px; border-radius: 7px; border: 2px solid var(--dim); flex: none; display: flex; align-items: center; justify-content: center; }
+  .box.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-size: 16px; }
+  .done { color: var(--dim); text-decoration: line-through; }
+  .build { margin-top: auto; padding: 12px 14px; gap: 2px; }
+  .build .b { font-size: 22px; line-height: 28px; font-weight: 700; color: var(--accent); }
+  .build .s { font-size: 15px; line-height: 20px; color: var(--dim); }
+  .nav-handle { height: 16px; }
+</style></head><body>
+<div class="screen app-cyberdeck">
+  <div class="status-bar" data-time="2:36"></div>
+  <div class="app-bar">
+    <span class="mark"><i data-icon="list-checks"></i></span>
+    <span class="title">장보기</span>
+  </div>
+  <div class="content">
+    <div class="t-hero">장보기 목록</div>
+    <div class="card list">
+      <div class="check-row"><span class="box on"><i data-icon="check"></i></span><span class="done">우유 2개</span></div>
+      <div class="check-row"><span class="box"></span><span>두부, 대파</span></div>
+      <div class="check-row"><span class="box"></span><span>사과 1봉지</span></div>
+    </div>
+    <div class="card tint build"><div class="b">빌드 14:36:10</div><div class="s">방금 다시 깔렸습니다</div></div>
+  </div>
+  <div class="nav-handle"></div>
+</div>
+</body></html>

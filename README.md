@@ -25,6 +25,19 @@ Claude Code 와 CLI 툴체인(openjdk + Gradle + cmdline-tools)만으로 가 보
 이 랩의 안드로이드 앱은 전부 이 방식으로 만들었습니다 — ClipBridge, foldmic, 폴드 에이전트, Claude 기록 앱,
 사이버덱, 핀백, cmux 모바일 관제실.
 
+## 실제로 이렇게 씁니다
+
+![맥 터미널에서 Claude Code 가 ./dev.sh run 을 마치고, 스탠드에 세운 폴드8 펼친 화면에 장보기 앱이 떠 있는 책상](docs/images/scenes/1-run.jpg)
+맥에서 "폰에 앱 만들어서 깔아줘" 한 마디 → 빌드·무선 설치·실행까지 끝나고 옆에 세운 폴드8 에 앱이 열립니다.
+
+![고친 뒤 다시 설치하자 커버 화면의 빌드 시각이 터미널에 찍힌 시각과 같아진 모습](docs/images/scenes/2-rebuild.jpg)
+고쳐 달라고 한 뒤 다시 깔면 → 커버 화면의 빌드 시각이 바뀌어, 새 버전이 들어갔는지 바로 확인됩니다.
+
+![dev.sh connect 가 세 경로를 모두 시도한 뒤, 폰에 뜬 무선 디버깅 허용 창을 안내하는 모습](docs/images/scenes/3-connect.jpg)
+처음 가는 Wi-Fi 에서 연결이 안 되면 → `connect` 가 세 경로를 다 시도하고, 폰의 허용 창을 「허용」까지 누르라고 알려 줍니다.
+
+책상 사진은 AI로 만든 배경이고, 화면은 설명용 목업을 합성했습니다.
+
 ## 스크린샷
 
 ![버전 실측 두 단계(터미널)와 함정 4개 카드](docs/images/traps.png)
